@@ -1,4 +1,4 @@
-# datascientist_project_02
+<># datascientist_project_02
 2024.03.19 Torsten Haase
 
 Udacity Datascience course - Delivery 02 desaster response pipeline
@@ -19,16 +19,17 @@ The following files are included:
 
 readme.md -> this files
 
-#data folder:
+# data folder:
 data/desaster_categories.csv -> which holds the categories for each post
 data/desaster_messages.csv -> which holds all message data
 data/DesasterResponse.db -> in this sqlite db all data is stored
 data/process_data.py -> the ETL script
 
-#model folder:
+# model folder:
+model/classifier.pkl -> the stored model in pickl format
+model/train_classifier.py -> the ml python file
 
-
-#app folder:
+# app folder:
 
 
 
