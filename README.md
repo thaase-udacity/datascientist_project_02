@@ -30,10 +30,10 @@ model/classifier.pkl -> the stored model in pickl format
 model/train_classifier.py -> the ml python file
 
 # app folder:
+app/run.py -> the python script to start the webapp
+app/templates -> folder with web app files
 
-
-
-Instructions:
+# Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
@@ -47,4 +47,5 @@ Instructions:
 
 4. Click the `PREVIEW` button to open the homepage
 
+# Thanks
 Thanks to the udacity team for the data science learning program. 
