@@ -10,6 +10,14 @@ from sqlalchemy import create_engine
 
 # this function take the filepath of both files and return two pd objects
 def load_data(messages_filepath, categories_filepath):
+    '''
+    INPUT:
+    messages_filepath - filepath to messages.csv
+    categories_filepath - filepath to categories.csv
+    
+    OUTPUT:
+    two datasets in panda format categories and messages
+    '''
     print("Load messages")
     messages = pd.read_csv(messages_filepath)
     print("Load categories")
@@ -19,6 +27,14 @@ def load_data(messages_filepath, categories_filepath):
 # this function cleans and transforms the data, it takes the two dataset categories
 # and messages and returns one clean and joined dataset
 def clean_data(messages, categories):
+    '''
+    INPUT:
+    messages - the messages dataset in panda format
+    categories - the categories dataset in panda format
+    
+    OUTPUT:
+    a dataset "df" with all necessary data
+    '''
     #use split and create new colums from categories column
     categories_1 = categories[['categories']].squeeze().str.split(';', expand=True)
     
@@ -35,6 +51,13 @@ def clean_data(messages, categories):
     
     #remove the text and keep 0 or 1, change to numerical
     def get_value(x):
+        '''
+        INPUT:
+        a text
+        
+        OUTPUT:
+        an integer 1 or 0
+        '''
         x = int(x[-1:])
         # 2 found in first column -> 2 becomes 1
         if x==2:
@@ -76,6 +99,11 @@ def clean_data(messages, categories):
     return df
 
 def save_data(df, database_filename):
+    '''
+    INPUT:
+    df - the dataset in panda format
+    database_filename - a string with the database name
+    '''
     # store dataset in sql lite db
     # standard udacity database file name doesn't fit to use engine -> add the sqlite:///
     engine = create_engine('sqlite:///'+database_filename)
