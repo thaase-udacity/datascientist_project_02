@@ -32,6 +32,13 @@ lemmatizer = WordNetLemmatizer()
 
 # function loads date from the database and splits data in test and train data
 def load_data(database_filepath):
+    '''
+    INPUT:
+    database_filepath - a string with the database filepath
+    
+    OUTPUT:
+    two dataset X and y with categorical and numerical data
+    '''
     print('{} connect to DB'.format(datetime.now()))
     conn = sqlite3.connect(database_filepath)
     cur = conn.cursor()
@@ -61,6 +68,13 @@ def load_data(database_filepath):
 
 # function tokenizes a text
 def tokenize(text):
+    '''
+    INPUT:
+    text - a string with a message
+    
+    OUTPUT:
+    a list of tokens in lowercase with removed stopwords
+    '''
     # normalize case and remove punctuation
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())
     
@@ -76,6 +90,10 @@ def tokenize(text):
 
 # creates a model with random forest
 def build_model():
+    '''
+    OUTPUT:
+    a grid search object with a pipeline and parameters using the random forest classifier
+    '''
     print('{} create pipeline random forest'.format(datetime.now()))
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -95,6 +113,10 @@ def build_model():
 
 # create a second model with different Classifier: AdaBoost
 def build_model_2():
+    '''
+    OUTPUT:
+    a grid search object with a pipeline and parameters using the ada boost classifier
+    '''
     print('{} create pipeline AdaBoost'.format(datetime.now()))
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -114,6 +136,10 @@ def build_model_2():
 
 # create a third model with different Classifier: ExtraTreesClassifier
 def build_model_3():
+    '''
+    OUTPUT:
+    a grid search object with a pipeline and parameters using the extra trees classifier
+    '''
     print('{} create pipeline ExtraTreesClassifier'.format(datetime.now()))
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -132,6 +158,12 @@ def build_model_3():
     return cv
 
 def display_results(cv, y_test, y_pred):
+    '''
+    INPUT:
+    a grid sear
+    OUTPUT:
+    a grid search object with a pipeline and parameters using the random forest classifier
+    '''
     labels = np.unique(y_pred)
     accuracy = (y_pred == y_test).mean()
     print("Labels:", labels)
