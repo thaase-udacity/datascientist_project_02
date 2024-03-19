@@ -5,9 +5,13 @@ Udacity Datascience course - Delivery 02 desaster response pipeline
 
 Project uses the following libaries:
 
-pandas
-numpy
-matplotlib
+1) pandas
+2) numpy
+3) matplotlib
+4) sqlite3
+5) nltk
+6) sklearn
+7) datetime
 
 Motivation of the project is to create a whole ML pipeline together with a web app.
 
@@ -15,12 +19,16 @@ The following files are included:
 
 readme.md -> this files
 
-data folder:
-data/categories.csv -> which holds the categories for each post
-data/messages.csv -> which holds all message data
-data/desasterresponse.db -> in this sqlite db all data is stored
+#data folder:
+data/desaster_categories.csv -> which holds the categories for each post
+data/desaster_messages.csv -> which holds all message data
+data/DesasterResponse.db -> in this sqlite db all data is stored
+data/process_data.py -> the ETL script
 
-model folder:
+#model folder:
+
+
+#app folder:
 
 
 
