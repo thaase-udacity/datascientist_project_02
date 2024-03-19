@@ -1,7 +1,5 @@
-# datascientist_project_02
+# Udacity Datascience course - Delivery 02 desaster response pipeline
 2024.03.19 Torsten Haase
-
-Udacity Datascience course - Delivery 02 desaster response pipeline
 
 Project uses the following libaries:
 
@@ -15,7 +13,7 @@ Project uses the following libaries:
 
 Motivation of the project is to create a whole ML pipeline together with a web app.
 
-The following files are included:
+# The following files are included:
 
 readme.md -> this files
 
