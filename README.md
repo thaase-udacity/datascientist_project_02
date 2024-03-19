@@ -1,4 +1,4 @@
-<># datascientist_project_02
+# datascientist_project_02
 2024.03.19 Torsten Haase
 
 Udacity Datascience course - Delivery 02 desaster response pipeline
