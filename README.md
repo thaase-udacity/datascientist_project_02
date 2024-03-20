@@ -46,4 +46,4 @@ app/templates -> folder with web app files
 4. Click the `PREVIEW` button to open the homepage
 
 # Thanks
-Thanks to the udacity team for the data science learning program. 
+Thanks to the udacity team for the data science learning program. Thanks to stackoverlow for helping me with multiple coding issues.
