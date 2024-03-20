@@ -160,9 +160,11 @@ def build_model_3():
 def display_results(cv, y_test, y_pred):
     '''
     INPUT:
-    a grid sear
+    cv - a grid search object
+    y_test the test data set
+    y_pred the pedicted dataset
     OUTPUT:
-    a grid search object with a pipeline and parameters using the random forest classifier
+    Print details about the prediction quality.
     '''
     labels = np.unique(y_pred)
     accuracy = (y_pred == y_test).mean()
@@ -171,7 +173,13 @@ def display_results(cv, y_test, y_pred):
     print("Accuracy:", accuracy)
     print("\nBest Parameters:", cv.best_params_) 
 
+# function to save the model to pickl file
 def save_model(model, model_filepath):
+    '''
+    INPUT:
+    model - the predicted model
+    model_filepath - the filepath where the function should store the model as pickl file
+    '''
     print('{} save model to pickl file'.format(datetime.now()))
     # save the model to pickl file
     filename = model_filepath
